@@ -1,0 +1,16 @@
+﻿@model ICollection<INDOVO.Models.EventModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div onclick="location.href='/Event/Event/@item.EventID'" class="col-md-4 " style="float:left">
+            <h2>@item.Name</h2>
+            <h2><sub>@item.Description</sub></h2>
+            <img src="@item.ImageURL" />
+        </div>
+
+    }
+</div>
